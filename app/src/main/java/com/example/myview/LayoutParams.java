@@ -12,6 +12,14 @@ import androidx.annotation.Nullable;
 public class LayoutParams extends View {
     private int lastX;
     private int lastY;
+    public LayoutParams(Context context) {
+        super(context);
+    }
+
+    public LayoutParams(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+    }
+
     public LayoutParams(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
     }
