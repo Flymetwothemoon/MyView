@@ -4,16 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-   <com.example.myview.CustomView
+   <com.example.myview.layout
        android:layout_width="50dp"
        android:layout_marginTop="50dp"
        android:background="@android:color/holo_red_light"
        android:layout_height="50dp"/>
-<com.example.myview.CustomView_0
+<com.example.myview.offsetLeftAndRightoroffsetTopAndBottom
     android:layout_width="50dp"
     android:layout_height="50dp"
     android:layout_marginTop="50dp"
     android:background="@android:color/holo_blue_light"/>
+   <com.example.myview.LayoutParams
+       android:layout_width="50dp"
+       android:layout_marginTop="50dp"
+       android:background="@android:color/holo_green_light"
+       android:layout_height="50dp"/>
 </LinearLayout>

@@ -7,18 +7,18 @@ import android.view.View;
 
 import androidx.annotation.Nullable;
 
-public class CustomView extends View {
+public class layout extends View {
     private int lastX;
     private int lastY;
-    public CustomView(Context context) {
+    public layout(Context context) {
         super(context);
     }
 
-    public CustomView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public layout(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 
-    public CustomView(Context context, @Nullable AttributeSet attrs) {
+    public layout(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
     }
 
