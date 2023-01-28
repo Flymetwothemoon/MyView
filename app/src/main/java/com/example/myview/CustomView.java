@@ -29,12 +29,15 @@ public class CustomView extends View {
         int y = (int)event.getY();
         switch (event.getAction()){
             case MotionEvent.ACTION_DOWN:
+                //按下的手势已完成，动作包含最终释放位置以及自上次向下或移动事件以来的任何中间点。
                 lastX = x;
                 lastY = y;
                 break;
                 case MotionEvent.ACTION_MOVE:
+                    //计算移动的距离
                     int offsetX = x - lastX;
                     int offsetY = y - lastY;
+                    //重新放置位置
                     layout(getLeft()+offsetX,getTop()+offsetY,getRight()+offsetX,getBottom()+offsetY);
                     break;
         }
