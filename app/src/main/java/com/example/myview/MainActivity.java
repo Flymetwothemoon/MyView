@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.annotation.SuppressLint;
@@ -36,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
     private Button mButton_5;
     private Button mButton_6;
     private Button mButton_7;
+    private Button mButton_8;
+
     private List<num>mList = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
         mButton_5 = findViewById(R.id.button_5);
         mButton_6 = findViewById(R.id.button_6);
         mButton_7 = findViewById(R.id.button_7);
+        mButton_8 = findViewById(R.id.button_8);
         anime.setAnimation(AnimationUtils.loadAnimation(MainActivity.this,R.anim.translate));
         mScroller = findViewById(R.id.scroller);
         mScroller.smoothScrollTo(-100,0);
@@ -80,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
         monior(animator6);
         init_0();
         init_1();
+        animatorset();
     }
     private void init_0(){
         ValueAnimator valueAnimator = ValueAnimator.ofFloat(0,100);
@@ -125,5 +130,15 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this,"scaleX2 repeat",Toast.LENGTH_SHORT).show();
             }
         });
+    }
+    private void animatorset(){
+        AnimatorSet animatorSet = new AnimatorSet();
+        ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(mButton_8,"translationX",100,0,50,100);
+        ObjectAnimator objectAnimator1 = ObjectAnimator.ofFloat(mButton_8,"alpha",0,1,0,1);
+        ObjectAnimator objectAnimator2 = ObjectAnimator.ofFloat(mButton_8,"rotationX",90,180,360,0);
+        ObjectAnimator objectAnimator3 = ObjectAnimator.ofFloat(mButton_8,"scaleX",2,3,4,5,1);
+        animatorSet.setDuration(3000);
+        animatorSet.play(objectAnimator).with(objectAnimator1).before(objectAnimator2).after(objectAnimator3);
+        animatorSet.start();
     }
 }

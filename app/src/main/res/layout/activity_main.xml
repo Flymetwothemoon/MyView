@@ -107,5 +107,12 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/button_7"
         android:id="@+id/recyclerView"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_8"
+        android:layout_below="@+id/recyclerView"
+        android:text="AnimatorSet"/>
+
 </RelativeLayout>
 </ScrollView>
