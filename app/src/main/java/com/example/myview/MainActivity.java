@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.annotation.SuppressLint;
@@ -14,6 +16,7 @@ import android.view.animation.AnimationSet;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -74,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
         ObjectAnimator animator6 = ObjectAnimator.ofFloat(mButton_6,"scaleX",2);
         animator6.setDuration(20000);
         animator6.start();
+        monior(animator6);
         init_0();
         init_1();
     }
@@ -97,5 +101,29 @@ public class MainActivity extends AppCompatActivity {
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
         recyclerView.setAdapter(adapter);
+    }
+    private void monior(ObjectAnimator animator){
+
+        animator.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+                Toast.makeText(MainActivity.this,"scaleX2 start",Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                Toast.makeText(MainActivity.this,"scaleX2 end",Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animation) {
+                Toast.makeText(MainActivity.this,"scaleX2 cancel",Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+                Toast.makeText(MainActivity.this,"scaleX2 repeat",Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
