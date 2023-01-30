@@ -96,5 +96,16 @@
         android:text="x放大2倍"
         android:id="@+id/button_6"
         android:layout_below="@+id/button_5"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_7"
+        android:text="ValueAnimator"
+        android:layout_below="@+id/button_6"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_7"
+        android:id="@+id/recyclerView"/>
 </RelativeLayout>
 </ScrollView>
