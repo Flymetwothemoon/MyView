@@ -20,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
     private Button mButton_3;
     private Button mButton_5;
     private Button mButton_6;
-    private Button mButton_7;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         mButton_4 = findViewById(R.id.button_4);
         mButton_5 = findViewById(R.id.button_5);
         mButton_6 = findViewById(R.id.button_6);
-        mButton_7 = findViewById(R.id.button_7);
+
         anime.setAnimation(AnimationUtils.loadAnimation(MainActivity.this,R.anim.translate));
         mScroller = findViewById(R.id.scroller);
         mScroller.smoothScrollTo(-100,0);
