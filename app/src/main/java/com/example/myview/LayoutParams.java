@@ -6,6 +6,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import androidx.annotation.Nullable;
 
@@ -36,7 +37,7 @@ public class LayoutParams extends View {
                 case MotionEvent.ACTION_MOVE:
                     int offsetX = x - lastX;
                     int offsetY = y - lastY;
-                    LinearLayout.LayoutParams layoutParams= (LinearLayout.LayoutParams) getLayoutParams();
+                   RelativeLayout.LayoutParams layoutParams= (RelativeLayout.LayoutParams) getLayoutParams();
                     layoutParams.leftMargin = getLeft() + offsetX;
                     layoutParams.topMargin = getTop() + offsetY;
                     setLayoutParams(layoutParams);

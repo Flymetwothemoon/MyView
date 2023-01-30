@@ -1,36 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
+
 
    <com.example.myview.layout
        android:layout_width="50dp"
        android:layout_marginTop="50dp"
+       android:id="@+id/one"
        android:background="@android:color/holo_red_light"
        android:layout_height="50dp"/>
 <com.example.myview.offsetLeftAndRightoroffsetTopAndBottom
     android:layout_width="50dp"
     android:layout_height="50dp"
     android:layout_marginTop="50dp"
+    android:layout_below="@+id/one"
+    android:id="@+id/two"
     android:background="@android:color/holo_blue_light"/>
    <com.example.myview.LayoutParams
        android:layout_width="50dp"
        android:layout_marginTop="50dp"
+       android:layout_below="@+id/two"
+       android:id="@+id/three"
        android:background="@android:color/holo_green_light"
        android:layout_height="50dp"/>
    <com.example.myview.anime
        android:layout_width="50dp"
        android:layout_marginTop="50dp"
        android:id="@+id/anime"
+       android:layout_below="@+id/three"
        android:background="@android:color/holo_orange_light"
        android:layout_height="50dp"/>
    <com.example.myview.scrollToAndscrollBy
        android:layout_width="50dp"
        android:layout_height="50dp"
-
+        android:id="@+id/four"
+       android:layout_below="@id/anime"
        android:layout_marginTop="50dp"
        android:background="@android:color/primary_text_light"
        />
@@ -39,6 +51,50 @@
       android:layout_height="50dp"
       android:layout_marginTop="50dp"
       android:id="@+id/scroller"
+      android:layout_below="@+id/four"
       android:background="@android:color/holo_red_dark"
       />
-</LinearLayout>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_0"
+        android:layout_below="@+id/scroller"
+        android:text="透明"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_1"
+        android:layout_below="@+id/button_0"
+        android:text="向x方向移动"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_2"
+        android:layout_below="@+id/button_1"
+        android:text="绕x旋转"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_3"
+        android:layout_below="@id/button_2"
+        android:text="直接旋转"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_4"
+        android:layout_below="@id/button_3"
+        android:text="绕y旋转"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@id/button_5"
+        android:text="不缩放版本"
+        android:layout_below="@+id/button_4"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="x放大2倍"
+        android:id="@+id/button_6"
+        android:layout_below="@+id/button_5"/>
+</RelativeLayout>
+</ScrollView>
