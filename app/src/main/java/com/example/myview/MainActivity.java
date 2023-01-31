@@ -8,6 +8,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.animation.PropertyValuesHolder;
 import android.animation.ValueAnimator;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -38,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
     private Button mButton_6;
     private Button mButton_7;
     private Button mButton_8;
-
+    private Button mButton_9;
     private List<num>mList = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
         mButton_6 = findViewById(R.id.button_6);
         mButton_7 = findViewById(R.id.button_7);
         mButton_8 = findViewById(R.id.button_8);
+        mButton_9 = findViewById(R.id.button_9);
         anime.setAnimation(AnimationUtils.loadAnimation(MainActivity.this,R.anim.translate));
         mScroller = findViewById(R.id.scroller);
         mScroller.smoothScrollTo(-100,0);
@@ -85,7 +87,18 @@ public class MainActivity extends AppCompatActivity {
         init_0();
         init_1();
         animatorset();
+        propervaluesholder(mButton_9);
     }
+
+    private void propervaluesholder(Button button) {
+        PropertyValuesHolder propertyValuesHolder = PropertyValuesHolder.ofFloat("scaleX",2,3,4,1);
+        PropertyValuesHolder propertyValuesHolder1 = PropertyValuesHolder.ofFloat("translationX",100,200,300,100);
+        PropertyValuesHolder propertyValuesHolder2 = PropertyValuesHolder.ofFloat("alpha",1,0,1,0,1);
+        PropertyValuesHolder propertyValuesHolder3 = PropertyValuesHolder.ofFloat("rotationX",180,90,180,0);
+        ObjectAnimator objectAnimator = ObjectAnimator.ofPropertyValuesHolder(button,propertyValuesHolder,propertyValuesHolder1,propertyValuesHolder2,propertyValuesHolder3);
+        objectAnimator.setDuration(5000).start();
+    }
+
     private void init_0(){
         ValueAnimator valueAnimator = ValueAnimator.ofFloat(0,100);
         valueAnimator.setTarget(mButton_7);

@@ -113,6 +113,11 @@
         android:id="@+id/button_8"
         android:layout_below="@+id/recyclerView"
         android:text="AnimatorSet"/>
-
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_9"
+        android:layout_below="@+id/button_8"
+        android:text="PropertyValuesHolder"/>
 </RelativeLayout>
 </ScrollView>
