@@ -119,5 +119,11 @@
         android:id="@+id/button_9"
         android:layout_below="@+id/button_8"
         android:text="PropertyValuesHolder"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_10"
+        android:layout_below="@+id/button_9"
+        android:text="在xml中使用属性动画"/>
 </RelativeLayout>
 </ScrollView>

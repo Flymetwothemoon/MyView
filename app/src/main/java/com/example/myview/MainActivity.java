@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.animation.Animator;
+import android.animation.AnimatorInflater;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
@@ -40,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
     private Button mButton_7;
     private Button mButton_8;
     private Button mButton_9;
+    private Button mButton_10;
     private List<num>mList = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
         mButton_7 = findViewById(R.id.button_7);
         mButton_8 = findViewById(R.id.button_8);
         mButton_9 = findViewById(R.id.button_9);
+        mButton_10 = findViewById(R.id.button_10);
         anime.setAnimation(AnimationUtils.loadAnimation(MainActivity.this,R.anim.translate));
         mScroller = findViewById(R.id.scroller);
         mScroller.smoothScrollTo(-100,0);
@@ -88,6 +91,13 @@ public class MainActivity extends AppCompatActivity {
         init_1();
         animatorset();
         propervaluesholder(mButton_9);
+        xmlAnima(mButton_10);
+    }
+
+    private void xmlAnima(Button button_10) {
+        Animator animator = AnimatorInflater.loadAnimator(this,R.animator.scale);
+        animator.setTarget(button_10);
+        animator.start();
     }
 
     private void propervaluesholder(Button button) {
